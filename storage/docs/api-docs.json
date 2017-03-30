@@ -1,0 +1,150 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Sample API",
+        "contact": {
+            "name": "Fernando Saavedra"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost",
+    "basePath": "/larave-prueba/public/",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "api/dashboard/store": {
+            "post": {
+                "tags": [
+                    "app"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns dashboard overview.",
+                "operationId": "api.dashboard.store",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "body",
+                        "description": "maximum number of results to return",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "last_name_parent",
+                        "in": "body",
+                        "description": "maximum number of results to return",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "name": "last_name_mother",
+                        "in": "body",
+                        "description": "maximum number of results to return",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "name": "bitrhday",
+                        "in": "body",
+                        "description": "maximum number of results to return",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    },
+                    {
+                        "name": "annual_income",
+                        "in": "body",
+                        "description": "maximum number of results to return",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Dashboard overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "api/dashboard/user": {
+            "get": {
+                "tags": [
+                    "app"
+                ],
+                "summary": "Display a listing of the resource.",
+                "description": "Returns dashboard overview.",
+                "operationId": "api.dashboard.user",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "maximum number of results to return",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Dashboard overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "description": "Class ApiController",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "description": "Class ApiController",
+                    "type": "string"
+                }
+            }
+        },
+        "Machine": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "table": {
+                    "description": "",
+                    "type": "string",
+                    "format": "string"
+                }
+            }
+        }
+    }
+}
